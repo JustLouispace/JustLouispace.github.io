@@ -1,0 +1,124 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f5f7;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Main Container Styling */
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Fixed width */
+    padding: 20px;
+    text-align: center;
+    max-width: 100%; /* Allow full width on smaller screens */
+    overflow: hidden; /* Prevent expansion */
+    height: 500px; /* Fixed height to avoid expanding */
+}
+
+/* Responsive Container for Mobile */
+@media (max-width: 480px) {
+    .container {
+        width: 90%; /* Width for mobile */
+    }
+}
+
+/* Title Styling */
+h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 15px
+}
+
+/* Button Styling */
+button {
+    border: none;
+    padding: 10px 20px;
+    margin: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:disabled {
+    background-color: gray; /* Disabled button color */
+    color: #999;
+    cursor: not-allowed;
+}
+
+button:first-of-type {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button:first-of-type:hover {
+    background-color: #45a049;
+}
+
+button:last-of-type {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+button:last-of-type:hover {
+    background-color: #e04444;
+}
+
+/* Result Styling */
+#result {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Attempts and History Styling */
+#attempts {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+#history {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+#history h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#historyList {
+    list-style-type: none;
+    padding-left: 0;
+    max-height: 150px; /* Fixed height for history list */
+    overflow-y: auto;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+#historyList li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
