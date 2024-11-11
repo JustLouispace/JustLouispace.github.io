@@ -7,7 +7,7 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'mali';  /* Use Sarabun font */
     position: relative; /* Positioning context for pseudo-element */
     color: #333;
     display: flex;

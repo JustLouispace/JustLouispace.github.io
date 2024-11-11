@@ -15,7 +15,6 @@ function generateRandomNumbers() {
     // Check if all unique pairs are used
     if (usedPairs.size >= 45) {
         showResult("All pairs have been used!");
-        document.getElementById("attempts").textContent = `Attempts: ${attemptCount}`;
         document.getElementById("randomButton").disabled = true; // Disable the button
         document.getElementById("randomButton").style.backgroundColor = "gray"; // Change button color to gray
         return;
@@ -86,10 +85,23 @@ function clearResults() {
     historyIndex = 1;
     document.getElementById("result").textContent = "";
     document.getElementById("historyList").innerHTML = "";
-    document.getElementById("attempts").textContent = "Attempts: 0";
-    document.getElementById("randomButton").disabled = false;  // Enable the button again
-    document.getElementById("randomButton").style.backgroundColor = "#4CAF50"; // Reset button color
+
+    // Update the attempts text correctly by setting the span's content
+    document.getElementById("attemptCount").textContent = attemptCount; // Reset attempts count to 0
+
+    // Reset the random button to enabled state
+    const randomButton = document.getElementById("randomButton");
+    randomButton.disabled = false;  // Enable the button again
+    randomButton.style.backgroundColor = "#8edec1"; // Reset button color to pastel green
+    // Reset any other button states if necessary
+    // For example, you can add any visual reset for disabled state of buttons, etc.
 }
+
+
+
+
+
+
 
 // Function to create a falling sakura petal
 function createSakuraPetal() {
