@@ -123,28 +123,30 @@ button:disabled {
     cursor: not-allowed;
 }
 
+/* First Button (Pastel Green) */
 button:first-of-type {
-    background-color: #4CAF50;
+    background-color: #8edec1; /* Pastel green */
     color: white;
 }
 
 button:first-of-type:hover {
-    background-color: #45a049;
+    background-color: #81c8b4; /* Lighter pastel green for hover */
 }
 
+/* Last Button (Pastel Red/Pink) */
 button:last-of-type {
-    background-color: #ff4d4d;
+    background-color: #ffb3b3; /* Pastel red/pink */
     color: white;
 }
 
 button:last-of-type:hover {
-    background-color: #e04444;
+    background-color: #ff9999; /* Lighter pastel pink for hover */
 }
 
 /* Result Styling */
 #result {
     font-size: 1.5rem;
-    color: #4CAF50;
+    color: #71d8b2;
     margin-top: 15px;
     font-weight: bold;
 }
