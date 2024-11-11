@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Random Unique Multiplication</title>
+    <title>สุ่มการคูณไม่ซ้ำกัน</title>
   </head>
   <body>
     <div class="container">
-        <h1>Random Unique Multiplication</h1>
-        <button onclick="generateRandomNumbers()" id="randomButton">Randomize</button>
-        <button onclick="clearResults()">Clear</button>
-        <div id="result"></div>
-        <div id="attempts">Attempts: 0</div>
-        <div id="history">
-            <h2>History:</h2>
-            <ul id="historyList"></ul>
-        </div>
-    </div>
+      <h1>การสุ่มตัวเลข</h1>
+      <button onclick="generateRandomNumbers()" id="randomButton">สุ่ม</button>
+      <button onclick="clearResults()">ล้าง</button>
+      <div id="result"></div>
+      <div id="attempts">จำนวนครั้งที่: <span id="attemptCount">0</span></div>
+      <div id="history">
+          <h2>ประวัติ</h2>
+          <ul id="historyList"></ul>
+      </div>
+  </div>
 
     <script src="app.js"></script>
   </body>

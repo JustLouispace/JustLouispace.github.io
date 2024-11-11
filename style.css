@@ -34,13 +34,13 @@ body::before {
 .container {
     position: relative; /* Keeps the content on top */
     background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Add shadow around the container */
     width: 360px; /* Fixed width */
     padding: 20px;
     text-align: center;
     max-width: 100%; /* Allow full width on smaller screens */
-    height: 500px; /* Fixed height to avoid expanding */
+    height: 480px; /* Fixed height to avoid expanding */
 }
 
 /* Responsive Container for Mobile */
@@ -66,7 +66,55 @@ button {
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Smooth transition for Result and Attempts */
+#result, #attempts {
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 1;
+}
+
+#result.animate, #attempts.animate {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+#historyList::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1)); /* Gradual shadow effect */
+    pointer-events: none; /* Ignore clicks */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s;
+}
+
+/* Show shadow only when scrollable */
+#historyList:has(li) {
+    overflow-y: auto;
+}
+
+#historyList:has(li):hover::after {
+    opacity: 1;
+}
+
+
+/* Smooth appearance for History List */
+#historyList li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: #666;
+    border-bottom: 1px solid #eee;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
 }
 
 button:disabled {
@@ -130,9 +178,62 @@ button:last-of-type:hover {
     margin-top: 10px;
 }
 
+
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#attemptCount {
+    display: inline-block; /* Ensure the span is treated as inline-block for animation */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+#attemptCount.animate {
+    animation: fadeSlide 0.3s ease-in-out;
+}
+
+/* Animation for new history item */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Start slightly lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
+
 #historyList li {
-    padding: 8px 0;
-    font-size: 0.95rem;
-    color: #666;
-    border-bottom: 1px solid #eee;
+    opacity: 0; /* Start hidden */
+    animation: fadeSlideIn 0.4s ease forwards; /* Apply animation */
+}
+
+
+.sakura-fall {
+    position: fixed;
+    top: -50px; /* Start slightly above the viewport */
+    width: 20px;
+    height: 20px;
+    background-image: url('sakura-flower.png'); /* Replace with sakura petal image path */
+    background-size: cover;
+    opacity: 1;
+    pointer-events: none; /* Petals don't block interactions */
+    z-index: -1000;
+    animation: fall linear infinite;
+}
+
+/* Sakura Fall Animation */
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg); /* Petal falls and rotates */
+        opacity: 0.3;
+    }
 }
