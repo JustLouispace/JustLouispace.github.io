@@ -83,19 +83,18 @@ function clearResults() {
     usedPairs.clear();
     attemptCount = 0;
     historyIndex = 1;
-    document.getElementById("result").textContent = "";
-    document.getElementById("historyList").innerHTML = "";
+    document.getElementById("result").textContent = "-"; // Set the result to "-"
+    document.getElementById("historyList").innerHTML = ""; // Clear history
 
-    // Update the attempts text correctly by setting the span's content
-    document.getElementById("attemptCount").textContent = attemptCount; // Reset attempts count to 0
+    // Update the attempts count with the correct value (0)
+    document.getElementById("attemptCount").textContent = attemptCount;
 
-    // Reset the random button to enabled state
+    // Enable the random button and reset the button style
     const randomButton = document.getElementById("randomButton");
     randomButton.disabled = false;  // Enable the button again
     randomButton.style.backgroundColor = "#8edec1"; // Reset button color to pastel green
-    // Reset any other button states if necessary
-    // For example, you can add any visual reset for disabled state of buttons, etc.
 }
+
 
 
 

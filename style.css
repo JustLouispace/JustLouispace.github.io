@@ -52,7 +52,7 @@ body::before {
 
 /* Title Styling */
 h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #333;
     margin-bottom: 15px;
     margin-top: 15px
@@ -60,6 +60,8 @@ h1 {
 
 /* Button Styling */
 button {
+    font-family: 'Mali', sans-serif;  /* Apply Mali font to buttons */
+    font-weight: 600; /* Set default weight if needed */
     border: none;
     padding: 10px 20px;
     margin: 8px;
