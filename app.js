@@ -110,4 +110,4 @@ function createSakuraPetal() {
 }
 
 // Generate petals at intervals
-setInterval(createSakuraPetal, 1000); // Add a new petal every 500ms
+setInterval(createSakuraPetal, 1500); // Add a new petal every 500ms
